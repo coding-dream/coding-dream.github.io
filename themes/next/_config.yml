@@ -53,6 +53,7 @@ menu:
   tags: /tags
   #sitemap: /sitemap.xml
   commonweal: /404.html
+  navigation: /navigation.html
 
 # Enable/Disable menu icons.
 # Icon Mapping:
@@ -70,6 +71,7 @@ menu_icons:
   archives: archive
   sitemap: sitemap
   commonweal: heartbeat
+  navigation: link
 
 
 # ---------------------------------------------------------------
