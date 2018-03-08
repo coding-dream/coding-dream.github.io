@@ -4,7 +4,7 @@
 
 # Site
 title: 编程之乐
-subtitle: 永无止境，不断超越，发现更大的世界...
+subtitle: 永无止境，不断超越<br/>发现更大的世界...
 description: love coder and I will better
 author: 编程之乐
 language: zh-Hans
@@ -42,7 +42,16 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
-
+  
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+  
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -63,13 +72,16 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
+plugins: hexo-generate-feed
 theme: next
+
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-deploy: 
- type: git
- repo: git@github.com:coding-dream/coding-dream.github.io.git
- branch: master
+deploy:
+  type: git
+  repo: git@github.com:coding-dream/coding-dream.github.io.git
+  branch: master
+  message: 
 
 avatar: images/head.jpg
