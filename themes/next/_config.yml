@@ -54,6 +54,7 @@ menu:
   #sitemap: /sitemap.xml
   commonweal: /404.html
   navigation: /unrender/navigation.html
+  video: /apps/mv/index.html
 
 # Enable/Disable menu icons.
 # Icon Mapping:
@@ -63,6 +64,7 @@ menu:
 menu_icons:
   enable: true
   #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome
+  #http://www.bootcss.com/p/font-awesome/#icons-web-app
   home: home
   about: user
   categories: th
@@ -72,6 +74,7 @@ menu_icons:
   sitemap: sitemap
   commonweal: heartbeat
   navigation: link
+  video: play
 
 
 # ---------------------------------------------------------------
