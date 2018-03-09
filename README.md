@@ -16,3 +16,28 @@ deploy:
 ```
 
 所以我们基本上所有工作只须在hexo分支即可完成所有工作，全程无须切换到master。
+
+
+## Hexo不渲染.md或者.html
+
+#### 方式一
+1. skip_render: test/* 单个文件夹下全部文件
+2. skip_render: test/*.md 单个文件夹下指定类型文件
+3. skip_render: test/** 单个文件夹下全部文件以及子目录
+
+```
+skip_render: 
+  - unrender/*
+  - mtv/*
+  - 404.html
+```
+
+#### 方式二
+不渲染 html 文件
+
+在不想被渲染的 html 文件最上面添加如下代码
+```
+---
+layout: false
+---
+```
