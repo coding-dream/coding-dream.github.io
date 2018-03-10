@@ -19,7 +19,7 @@
 <section class="container">
 	<div class="b-listtab-main">
 		<div class="s-tab-main">
-			<ul class="list g-clear">
+			<ul class="list g-clear" id="list_mv">
 		       <!--  <li class="item">
 		        	<a class="js-tongjic" href="/apps/chplayer/index.html" title="斩尽杀绝" target="_blank">
 				         <div class="cover g-playicon">
@@ -41,11 +41,11 @@
 		</div>
 	</div>
 </section>
-<script src="js/jquery.min.js"></script>
-<script src="js/httputils.js"></script>
+<!-- console 控制台 <script src="http://mtestzhanqi.artqiyi.com/views/common/libs/vconsole.min.js "></script> -->
 <script type="text/javascript">
-	$(function(){
-		httpGet("/apps/db/1.json",function(data){
+	var movieList = "";
+	window.onload = function(){
+		httpRequest("/apps/db/1.json",function(data){
 			var obj = eval('(' + data + ')')
 			var code = obj.code;
 			if(code == 200){
@@ -53,10 +53,13 @@
 					var item = obj.results[i].msg;
 					var v = item.split("|");
 					appendItem(v);
-				}	
+				}
+				document.getElementById("list_mv").innerHTML = movieList;
+			} else {
+				alert("data load error!");
 			}
 		});
-	});
+	}
 
 	function appendItem(v){
 		var name = v[0];
@@ -80,7 +83,21 @@
          	</a>
 	     </li>
 		`;
-		$("ul").append(li_item);
+		movieList = movieList + li_item;
+	}
+
+	function httpRequest(url, callback){
+	    var xhr = new XMLHttpRequest();
+	    xhr.open("GET", url, true);
+	    xhr.onreadystatechange = function() {
+	        if (xhr.readyState == 4 && xhr.status == 200) {
+	            callback(xhr.responseText);
+	        }
+	    }
+	    xhr.onerror = function(){
+	        callback(false);
+	    }
+	    xhr.send();
 	}
 </script>
 </body>
