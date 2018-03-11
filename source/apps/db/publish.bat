@@ -1,5 +1,6 @@
 @echo off
 
 echo ========= update json =========
-hexo clean && hexo g && hexo d
+git status && git add . && git commit -m "update blogs" && hexo clean && hexo g && hexo d
+pause
 exit
