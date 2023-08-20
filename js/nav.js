@@ -3,7 +3,7 @@ $(document).ready(function() {
 });
 
 function get_nav_api(){
-    axios.get('/api/web/nav').then(function (response) {
+    axios.get('https://ssup.cc/api/web/nav').then(function (response) {
     // handle success
     let category_list = response.data.body.results;
     let html = '';
