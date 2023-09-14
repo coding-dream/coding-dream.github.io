@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>验证框</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <style>
+    /* 使整个页面居中 */
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 卡片式设计 */
+    .card {
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      background-color: #fff;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    /* 输入框和按钮样式 */
+    input[type=text] {
+      padding: 10px 0px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 style="text-align:center;">验证框</h1>
+    <div>
+      <input type="text" id="input_code" name="input_code" required>
+      <br>
+      <br>
+      <button type="button">提交</button>
+    </div>
+  </div>
+
+<script>
+  function submitForm() {
+  let input = document.getElementById("input_code");
+  let data = {input_code: input.value};
+
+  axios.post('/api/web/validate', {
+    input_code: input.value
+  })
+  .then(function (response) {
+    if (response.data.code === 0) {
+      // alert("验证成功");
+      // 跳转到首页
+      window.location.href = "home.html";
+
+    } else {
+      alert("验证失败");
+    }
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+}
+
+document.querySelector("button[type='button']").addEventListener("click", submitForm);
+
+</script>
+
+</body>
+</html>

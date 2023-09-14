@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="cache-control" content="no-siteapp">
+	<title>每日休闲</title>
+
+	<!-- cdnjs : use a specific version of Video.js (change the version numbers as necessary) -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.3.0/video-js.min.css" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.3.0/video.min.js"></script>
+	<script src="videojs.hls.min.js"></script>
+
+	<meta name="keywords" content="视频,直播,最新电影">
+	<meta name="description" content="最好看的剧情片的免费电影，电视剧，综艺">
+	<meta name="referer" content="never"/>
+</head>
+<body class="home blog">
+<header class="header">
+
+</header>
+<body>
+<center>
+
+	<div id="dtgvideo">
+		<div id="a1">
+			<video
+					id="my-player"
+					class="video-js"
+					controls
+					preload="auto"
+					poster="//vjs.zencdn.net/v/oceans.png"
+					data-setup='{}'>
+				<source src="https://www.baidu.m3u8" type="application/x-mpegURL"></source>
+			</video>
+		</div>
+
+		<script type="text/javascript">
+			var url = getParam("v");
+			document.getElementById("my-player").src = url;
+
+			function getParam(paramName) {
+				paramValue = "", isFound = !1;
+				if (window.location.search.indexOf("?") == 0 && window.location.search.indexOf("=") > 1) {
+					arrSource = unescape(window.location.search).substring(1, window.location.search.length).split("&"), i = 0;
+					while (i < arrSource.length && !isFound) arrSource[i].indexOf("=") > 0 && arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() && (paramValue = arrSource[i].split("=")[1], isFound = !0), i++
+				}
+				return paramValue == "" && (paramValue = null), paramValue
+			}
+		</script>
+	</div>
+</center>
+</body>
+</body>

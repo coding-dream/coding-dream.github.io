@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>原生与JS的互调</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+    <script>
+        function setCache() {
+            window.android.setH5Value('h1', 'h1的值');
+            alert("设置成功");
+        }
+
+    </script>
+
+    <h1>原生与JS的互调</h1>
+
+    <button type="button" onclick="window.android.callAndroid('你好Android')">发数据给安卓</button>
+    <button type="button" onclick="window.android.toast('你好Android')">设置缓存</button>
+    <button type="button" onclick="setCache()">设置缓存</button>
+    <button type="button" onclick="alert(window.android.getToken())">获取Token</button>
+    <button type="button" onclick="alert(window.android.getH5Value('h1'))">获取缓存</button>
+    <button type="button" onclick="window.android.close()">关闭页面</button>
+    <button type="button" onclick="alert(window.android.copyToClipboard('这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容这是拷贝的内容哈哈哈哈哈'))">拷贝到剪切板</button>
+
+</body>
+</html>

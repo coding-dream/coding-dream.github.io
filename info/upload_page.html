@@ -1,0 +1,28 @@
+ <html>
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.108.0">
+    <title>文件上传</title>
+</head>
+
+<body>
+    <form action="/api/file/simple_upload" enctype="multipart/form-data" method="post">
+        <input name="username" type="text" multiple><br><br>
+        <input name="file" type="file" multiple><br><br>
+        <input type="submit" value="上传">
+    </form>
+    <br><br><br>
+
+
+    <form action="/api/test/upload_file/" enctype="multipart/form-data" method="post">
+        <input name="file" type="file" multiple><br><br>
+        <input name="fileb" type="file" multiple><br><br>
+        <input name="notes" type="text" multiple><br><br>
+        <input type="submit" value="点击这里显示文件属性">
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,133 @@
+/* ChatGPT的loading：暂时未使用，已用Bootstrap的loading替代 */
+.my-chat-loading {
+	display: inline-block;
+	height: 50px;
+	animation: chat_loading 1s infinite;
+}
+
+@keyframes my-chat-loading {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+/* 网页居中的loading（导航站Ajax） */
+#my-my-loading {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(0, 0, 0, 0.6);
+	padding: 1em;
+	border-radius: 10px;
+}
+
+.my-loading-spinner {
+	border: 5px solid #ccc;
+	border-top: 5px solid #333;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	animation: my-spin 1s linear infinite;
+}
+
+@keyframes my-spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* Toast提示 */
+.my-toast {
+    position: fixed;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    display: none;
+    background-color: #666;
+    border-radius: 10px;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+/* 侧滑抽屉 */
+#my-sidebar {
+	position: fixed;
+	top: 0px;
+	left: -50%;
+	width: 50%;
+	height: 100%;
+	background-color: #202123;
+	overflow-x: hidden;
+	transition: 0.5s;
+}
+
+#my-sidebar.open {
+	left: 0;
+}
+
+/* 表单样式 */
+.my-form-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.my-form-input {
+	width: 800px;
+	height: 80px;
+	font-size: 20px;
+	padding: 10px;
+	border: 2px solid lightgray;
+	border-radius: 10px;
+	margin-bottom: 20px;
+}
+
+.my-form-submit {
+	width: 200px;
+	height: 60px;
+	font-size: 20px;
+	background-color: lightgray;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.my-form-submit:hover {
+	background-color: gray;
+}
+
+/* 卡片式样式 */
+.my-card {
+	width: 800px;
+	padding: 10px;
+	margin: 20px auto;
+	background: white;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
+}
+
+.my-card-content {
+	padding: 20px;
+}
+
+.my-card h2 {
+	margin-top: 0;
+}

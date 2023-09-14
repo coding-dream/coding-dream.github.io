@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>每日休闲</title>
+
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		<script type="text/javascript" src="chplayer.min.js"></script>
+		<script type="text/javascript" src="hls/hls.min.js"></script>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<meta http-equiv="cache-control" content="no-siteapp">
+		<meta name="keywords" content="视频,直播,最新电影">
+		<meta name="description" content="最好看的剧情片的免费电影，电视剧，综艺">
+		<meta name="referer" content="never"/>
+	</head>
+<body class="home blog">
+<header class="header"></header>
+<body>
+	<center>
+	<div id="dtgvideo">
+		<div class="video" style="width: 80%; height: 80%;"></div>
+
+		<script type="text/javascript">
+				// 获取地址栏里传递过来的视频地址
+				function getUrlParam(name) {
+					var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+					var r = window.location.search.substr(1).match(reg); //匹配目标参数
+					if(r != null) return unescape(r[2]);
+					return null; //返回参数值
+				}
+				var videoUrl =getUrlParam('v');
+				var hls = getUrlParam('hls');
+				var videoObject = {
+					autoplay: true, //是否自动播放
+					loop: false, //是否循环播放，默认false=不需要,true=需要
+					container: 'video',
+					variable:'player',
+					html5m3u8: true,
+					flashplayer: false, //强制使用flashplayer
+					video: videoUrl
+				};
+				if(hls!=null){
+					videoObject['html5m3u8'] = true;
+				}
+
+				var player = new chplayer(videoObject);
+			</script>
+
+	</div>
+	</center>
+</body>
+
+<!--
+video: [
+	['examples01.mp4', 'video/mp4', '标清', 5],
+	['examples01.webm', 'video/webm', '标清', 0],
+	['examples01.ogg', 'video/ogg', '标清', 0],
+	['examples02.mp4', 'video/mp4', '高清', 10],
+	['examples03.mp4', 'video/mp4', '高清', 0],
+	['examples04.mp4', 'video/mp4', '超清', 0]
+]
+数组里各值的意思是：['视频地址','视频类型','清晰度名称，可以为空',权重]
+视频地址：即视频地址，可以是mp4，flv，f4v，m3u8以及rtmp协议
+视频类型：只有当有类型时才需要填写，如果是m3u8或rtmp协议时留空
+清晰度名称：注意要么都要有，要么全留空
+权重：即在相等条件下优先播放顺序，数值越大，权重超高
+
+-->

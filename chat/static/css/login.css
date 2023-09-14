@@ -1,0 +1,127 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  padding: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  position: relative;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.modal-header .close-button {
+  position: absolute;
+  top: 36px;
+  right: 36px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.modal-header .close-button:focus {
+  outline: none;
+}
+
+.modal-header .close-button::before,
+.modal-header .close-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.modal-header .close-button::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #000000;
+}
+
+.form-group input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  padding: 5px;
+  color: #000000;
+}
+
+.form-actions {
+  text-align: center;
+}
+
+.btn-login,
+.btn-register {
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #007bff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-login:hover,
+.btn-register:hover {
+  background-color: #0056b3;
+}
+
+.btn-login:active,
+.btn-register:active {
+  background-color: #004999;
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    width: 100%;
+  }
+}

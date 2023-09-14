@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>文章详情页</title>
+<!-- 引入Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- 引入自定义样式（如有需要） -->
+<link rel="stylesheet" href="static/css/md.css">
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/default.min.css">
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<!-- 引入自定义样式（如有需要） -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.min.js"></script>
+<script src="static/js/tools_canvas.js"></script>
+
+<!-- common -->
+<link rel="stylesheet" href="static/css/common.css" />
+<script src="static/js/common.js"></script>
+
+</head>
+<body>
+
+      <div id="targetDiv"></div>
+
+      <div>
+        <a href="#" class="btn btn-secondary" onclick="captureDivAsImage('targetDiv')">保存为图片</a>
+        <a href="#" class="btn btn-secondary" onclick="copyCurrentUrl()">分享链接</a>
+        <a href="share_knowledge_open.html" class="btn btn-secondary">返回文章列表</a>
+      </div>
+
+    <!-- 引入Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- 引入axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="static/js/article_detail.js"></script> 
+
+</body>
+</html>

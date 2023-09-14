@@ -1,0 +1,8 @@
+.idea
+_pycache_
+uploads
+config.yaml
+nohup.out
+api_filter_words.txt
+api_key.txt
+icon_temp
